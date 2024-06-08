@@ -34,6 +34,8 @@ public class TPAccept implements CommandExecutor {
                 return true;
             }
 
+            plugin.getBackCommand().setLastLocation(requester);
+
             requester.teleport(player.getLocation());
             player.sendMessage("You have accepted the teleport request.");
             requester.sendMessage("Your teleport request has been accepted.");

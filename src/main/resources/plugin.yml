@@ -24,6 +24,31 @@ commands:
   homes:
     description: List all your home locations.
     usage: /homes
+    permission: easytp.homes
+    permission-message: You do not have permission to use this command.
+  homesview:
+    description: View another player's home locations (admin only).
+    usage: /homesview <player>
+    permission: easytp.admin
+    permission-message: You do not have permission to use this command.
+  playerhometp:
+    description: Teleport to a specified home of a player (admin only).
+    usage: /playerhometp <player> <home>
+    permission: easytp.admin
+    permission-message: You do not have permission to use this command.
   back:
-    description: TPs you back to your previous location
+    description: Teleport to your last location.
     usage: /back
+  tpr:
+    description: Teleport to a random location.
+    usage: /tpr
+  death:
+    description: Teleport to your last death location.
+    usage: /death
+permissions:
+  easytp.admin:
+    description: Allows access to admin commands.
+    default: op
+  easytp.homes:
+    description: Allows access to the /homes command.
+    default: true

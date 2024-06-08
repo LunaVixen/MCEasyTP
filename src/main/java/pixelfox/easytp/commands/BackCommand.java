@@ -8,12 +8,14 @@ import org.bukkit.entity.Player;
 import pixelfox.easytp.EasyTP;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 public class BackCommand implements CommandExecutor {
 
+
     private final EasyTP plugin;
-    private final HashMap<UUID, Location> lastLocations = new HashMap<>();
+    private final Map<UUID, Location> lastLocations = new HashMap<>();
 
     public BackCommand(EasyTP plugin) {
         this.plugin = plugin;
@@ -40,12 +42,12 @@ public class BackCommand implements CommandExecutor {
         return true;
     }
 
-    public void setLastLocation(Player player, Location location) {
-        lastLocations.put(player.getUniqueId(), location);
+    public void setLastLocation(Player player) {
+        lastLocations.put(player.getUniqueId(), player.getLocation());
     }
 
-    public void removeLastLocation(Player player) {
-        lastLocations.remove(player.getUniqueId());
+    public Location getLastLocation(Player player) {
+        return lastLocations.get(player.getUniqueId());
     }
 
 }

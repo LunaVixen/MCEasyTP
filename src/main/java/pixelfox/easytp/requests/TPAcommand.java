@@ -39,8 +39,6 @@ public class TPAcommand implements CommandExecutor {
             target.sendMessage(player.getName() + " has requested to teleport to you. Type /tpaccept to accept or /tpadeny to deny.");
             player.sendMessage("Teleport request sent to " + target.getName());
 
-            plugin.getBackCommand().setLastLocation(player, player.getLocation());
-
             return true;
         }
 

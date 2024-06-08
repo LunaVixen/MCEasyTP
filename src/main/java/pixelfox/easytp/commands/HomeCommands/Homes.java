@@ -52,6 +52,7 @@ public class Homes implements CommandExecutor, TabCompleter {
                     float yaw = rs.getFloat("yaw");
                     float pitch = rs.getFloat("pitch");
                     Location loc = new Location(Bukkit.getWorld(world), x, y, z, yaw, pitch);
+                    plugin.getBackCommand().setLastLocation(player);
                     player.teleport(loc);
                     player.sendMessage("Teleported to home '" + homeName + "'!");
                 } else {
@@ -62,7 +63,7 @@ public class Homes implements CommandExecutor, TabCompleter {
                 player.sendMessage("An error occurred while teleporting to your home.");
             }
 
-            plugin.getBackCommand().setLastLocation(player, player.getLocation());
+
             return true;
         }
         return false;
