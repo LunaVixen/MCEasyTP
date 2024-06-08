@@ -1,0 +1,29 @@
+name: EasyTP
+version: '1.0'
+main: pixelfox.easytp.EasyTP
+api-version: '1.20'
+commands:
+  tpa:
+    description: Request to teleport to another player.
+    usage: /tpa <player>
+  tpaccept:
+    description: Accept a teleport request.
+    usage: /tpaccept
+  tpadeny:
+    description: Deny a teleport request.
+    usage: /tpadeny
+  sethome:
+    description: Set your home location.
+    usage: /sethome <name>
+  home:
+    description: Teleport to your home location.
+    usage: /home <name>
+  delhome:
+    description: Delete a home location.
+    usage: /delhome <name>
+  homes:
+    description: List all your home locations.
+    usage: /homes
+  back:
+    description: TPs you back to your previous location
+    usage: /back
